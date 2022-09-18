@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/common.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <center>
+        <div id="signup">
+            <h2>Signup</h2>
+            <input id="name" type="text" placeholder="Enter name" /> <br>
+            <input id="email" type="text" placeholder="Enter email" /> <br>
+            <input id="number" type="number" placeholder="Enter mobile " /> <br>
+            <input id=password type="password" placeholder="Password" /><br>
+            <button id="submit" onclick="SubmitData()">Submit</button>
+        </div>
+    </center>
+
+</body>
+
+</html>
+<script type="module">
+    import navbar from "./componets/navbar.js";
+    document.getElementById("navbar").innerHTML = navbar();
+
+    document.getElementById("submit").onclick = SubmitData;
+
+    let arr = JSON.parse(localStorage.getItem('user')) || [];
+
+    function SubmitData() {
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let number = document.getElementById('number').value;
+        let password = document.getElementById('password').value;
+
+
+
+        let temp = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].email == email) {
+                temp = true;
+            }
+        }
+        if (temp) {
+            alert('user email already exitsting')
+        }
+        else {
+            if (email.length == 0 || password.length == 0 || name.length == 0 || number.length == 0) {
+                alert('Please fill existing')
+            }
+            else if (email.length != 0 && password.length != 0) {
+                let arr = JSON.parse(localStorage.getItem('user')) || [];
+                let sd = { "email": email, 'password': password }
+                arr.push(sd);
+                localStorage.setItem('user', JSON.stringify(arr));
+                window.location.href = "login.html"
+
+            }
+        }
+    }
+
+
+</script>

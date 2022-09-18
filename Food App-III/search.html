@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/common.css"/>
+    <title>Forum</title>
+</head>
+<body>
+   
+    <div id="navbar"></div>
+    <center>
+        <input id="search-from"  type="text" placeholder="serch meal" oninput="debounceFunction(main,1000)"/>
+        </center>  
+        <div id="results">
+        </div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./componets/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
+
+    
+    let id;
+    document.getElementById("search-from").oninput=main;
+    import {append,displaymeal} from'./search.js';
+
+   async function main(){
+        let x=document.getElementById("search-from").value;
+       let res=displaymeal(x);
+
+       let data=await res;
+       console.log(data);
+       append(data);
+    }
+  
+function debounceFunction(func,delay){
+if(id){
+    clearTimeout(id);
+}
+id= setTimeout(function(){
+    func();
+
+},delay)
+}
+
+</script>

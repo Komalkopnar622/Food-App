@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/common.css" />
+    <title>API</title>
+</head>
+
+
+<body>
+    <div id="navbar"></div>
+    <div id="results"></div>
+
+</body>
+
+</html>
+<script type="module">
+    import navbar from "./componets/navbar.js";
+    document.getElementById("navbar").innerHTML = navbar();
+    import { getData, append1 } from './fetch.js';
+
+
+    let user = JSON.parse(localStorage.getItem('user')) || [];
+    console.log(user)
+
+    let url = 'https://www.themealdb.com/api/json/v1/1/categories.php'
+    if (user.length > 0) {
+        let con = document.querySelector("#results");
+        let data = await getData(url);
+
+        append1(data.categories, con);
+    }
+    else {
+        alert('login first')
+        window.location.href = "./signup.html"
+    }
+
+    // async function loginsucess() {
+
+
+    //     console.log("HI")
+
+
+
+
+    // }
+
+    //
+
+    // 
+
+
+
+
+
+
+
+
+</script>

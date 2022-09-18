@@ -1,0 +1,116 @@
+#navbar{
+    background-color: rgb(6, 2, 2);
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+#login1{
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 30%;
+    background-color: rgb(54, 57, 57);
+   
+}
+#signup{
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 30%;
+    background-color: rgb(54, 57, 57);
+}
+input{
+    padding: 5px;
+    margin-top: 10px;
+    width: 200px;
+}
+h2{
+    margin-top: 20px;
+    color: rgb(183, 177, 177);
+    font-size: 40px;
+}
+button{
+    border: 0px;
+    width: 80px;
+    margin-top: 20px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+#nav2{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    margin-left: 20px;
+    width: 500px;
+}
+#imgnav{
+   width: 50%;
+   padding: 5px; 
+  
+}
+#api{
+    background-color: rgb(189, 16, 16);
+    cursor: pointer;
+    text-decoration: none;
+    border: 0px;
+    color: antiquewhite;
+}
+#api >a{
+    color: white;
+    text-decoration: none;
+}
+#home{
+    background-color: rgb(160, 11, 11);
+    cursor: pointer;
+    color: antiquewhite;
+    
+}
+#home >a{
+    color: white;
+    text-decoration: none;
+}
+#fourm{
+    background-color: rgb(160, 11, 11);
+    cursor: pointer;
+    color: antiquewhite;
+}
+#fourm >a{
+    color: white;
+    text-decoration: none;
+}
+#results{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:5px;
+
+    
+}
+#results img{
+    width: 80%;
+    height: 80%;
+}
+#search-from{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+body{
+    background-color: rgb(5, 94, 94);
+}
+#results p{
+    color: rgb(9, 2, 2);
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+    margin-left: 15px;
+   
+}
+.class1{
+    /* border: 1px solid red; */
+    width: 80%;
+    height: 300px;
+}
+.imgclass{
+    /* border: 1px solid red; */
+    width: 80%;
+    height: 300px;
+}
+
